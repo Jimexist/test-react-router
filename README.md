@@ -17,3 +17,7 @@ With these combinations:
 ## Getting started:
 
 Run `yarn start -- --open`
+
+## Localizing routes:
+
+See [this comment](https://github.com/Jimexist/test-react-router/commit/1c7608e99ed27bc41475272e8704d5f57b0a1726)
