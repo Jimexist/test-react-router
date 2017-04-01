@@ -13,3 +13,7 @@ With these combinations:
   "redux": "^3.6.0"
 }
 ```
+
+## Getting started:
+
+Run `yarn start -- --open`
