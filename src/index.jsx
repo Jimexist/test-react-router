@@ -35,7 +35,7 @@ const UserNav = () => {
 
 const Users = connect(null, dispatch => ({
   goToUser: userId => dispatch(push('/user/' + userId))
-}))(({ children, history, goToUser }) => {
+}))(({ history, goToUser }) => {
   return (
     <div>
       <h2>
@@ -60,7 +60,7 @@ const Users = connect(null, dispatch => ({
           </button>
         </form>
       </div>
-      { children }
+      <Route path='/user/:id' component={UserProfile} />
     </div>
   )
 })
@@ -99,7 +99,7 @@ const NavBar = () => {
   )
 }
 
-const App = ({ children }) => {
+const App = () => {
   return (
     <div>
       <h1>
@@ -109,7 +109,9 @@ const App = ({ children }) => {
         <NavBar />
       </div>
       <div>
-        { children }
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/user' component={Users} />
       </div>
     </div>
   )
@@ -139,10 +141,6 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <div>
         <Route path='/' component={App} />
-        <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/user' component={Users} />
-        <Route path='/user/:id' component={UserProfile} />
       </div>
     </ConnectedRouter>
   </Provider>,
